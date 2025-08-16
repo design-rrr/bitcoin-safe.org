@@ -21,10 +21,4 @@ videos:
 ! 🔐💰
 
 {{< youtube-gallery >}}
-
-<br><br>
-
-# Billetera de Firma Múltiple
-
-![Configura una Billetera Multisignatura](https://raw.githubusercontent.com/andreasgriffin/bitcoin-safe/refs/heads/main/docs/multisig-setup.gif)
-{ .img-fluid .mb-5 }
+ 

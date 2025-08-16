@@ -13,6 +13,4 @@ keywords: ["Diagram"]
 <br>
 
 
-![Setup Multisignature Wallet](https://raw.githubusercontent.com/andreasgriffin/bitcoin-safe/refs/heads/main/docs/explorer.gif)
-{ .img-fluid .mb-5 }
-
+{{< video "navigating.mp4" controls  autoplay muted playsinline >}}

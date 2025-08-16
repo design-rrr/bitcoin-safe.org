@@ -1,8 +1,8 @@
 ---
 aliases:
   - "/features/search/"
-title: "Search"
-description: "Type to search across all open wallets"
+title: "Buscar"
+description: "Escribe para buscar en todas las billeteras abiertas"
 draft: false
 tags: ["Featured" ,"Features"]
 images: [ "logo.png" ]
