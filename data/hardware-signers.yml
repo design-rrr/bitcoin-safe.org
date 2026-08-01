@@ -2,6 +2,8 @@ signers:
 - id: coldcard-q
   slug: coldcard-q
   slugimage: q
+  default_last: true
+  default_last_order: 2
   name:
     en: Coldcard Q
   summary_points:
@@ -99,108 +101,16 @@ signers:
     qr: true
     sd: true
   bitcoin_only: true
-- id: coldcard-mk4
-  slug: coldcard-mk4
-  slugimage: coldcard
-  name:
-    en: Coldcard Mk4
-  summary_points:
-    en:
-    - Bitcoin-only signer with USB and microSD.
-    - Stores multisig wallet details on-device.
-    - Works with Bitcoin-Safe without a vendor app.
-    es:
-    - Dispositivo de firma solo para Bitcoin con USB y microSD.
-    - Guarda los datos de la billetera multifirma en el dispositivo.
-    - Funciona con Bitcoin-Safe sin una app del fabricante.
-    fr:
-    - Signataire Bitcoin uniquement avec USB et microSD.
-    - Stocke les détails du portefeuille multisig sur l’appareil.
-    - Fonctionne avec Bitcoin-Safe sans application du fabricant.
-    de:
-    - Bitcoin-Only-Signer mit USB und microSD.
-    - Speichert Multisig-Wallet-Daten auf dem Gerät.
-    - Funktioniert mit Bitcoin-Safe ohne Hersteller-App.
-    it:
-    - Signer solo Bitcoin con USB e microSD.
-    - Memorizza i dettagli del wallet multisig sul dispositivo.
-    - Funziona con Bitcoin-Safe senza un’app del produttore.
-    pt:
-    - Dispositivo de assinatura apenas Bitcoin com USB e microSD.
-    - Guarda os dados da carteira multisig no dispositivo.
-    - Funciona com o Bitcoin-Safe sem uma aplicação do fabricante.
-    pl:
-    - Podpisywacz tylko do Bitcoina z USB i microSD.
-    - Przechowuje dane portfela multisig na urządzeniu.
-    - Działa z Bitcoin-Safe bez aplikacji producenta.
-    tr:
-    - USB ve microSD içeren, sadece Bitcoin için imzalayıcı.
-    - Multisig cüzdan bilgilerini cihazda saklar.
-    - Bir üretici uygulaması olmadan Bitcoin-Safe ile çalışır.
-    id:
-    - Penanda tangan khusus Bitcoin dengan USB dan microSD.
-    - Menyimpan detail dompet multisig di perangkat.
-    - Bekerja dengan Bitcoin-Safe tanpa aplikasi vendor.
-    ca:
-    - Signador només de Bitcoin amb USB i microSD.
-    - Desa els detalls de la cartera multifirma al dispositiu.
-    - Funciona amb Bitcoin-Safe sense una aplicació del fabricant.
-    ru:
-    - Устройство подписи только для Bitcoin с USB и microSD.
-    - Хранит данные multisig-кошелька на устройстве.
-    - Работает с Bitcoin-Safe без приложения производителя.
-    uk:
-    - Підписувач лише для Bitcoin з USB і microSD.
-    - Зберігає дані multisig-гаманця на пристрої.
-    - Працює з Bitcoin-Safe без застосунку виробника.
-    zh:
-    - 仅支持比特币的签名设备，带 USB 和 microSD。
-    - 在设备上保存多签钱包信息。
-    - 无需厂商应用即可配合 Bitcoin-Safe 使用。
-    ja:
-    - USB と microSD を備えた Bitcoin 専用署名デバイス。
-    - マルチシグウォレット情報をデバイス上に保存します。
-    - ベンダーアプリなしで Bitcoin-Safe と使えます。
-    ko:
-    - USB와 microSD를 갖춘 비트코인 전용 서명 장치.
-    - 멀티시그 지갑 정보를 장치에 저장합니다.
-    - 제조사 앱 없이 Bitcoin-Safe와 함께 사용할 수 있습니다.
-    hi:
-    - USB और microSD वाला केवल बिटकॉइन साइनर।
-    - मल्टीसिग वॉलेट का विवरण डिवाइस पर संग्रहीत करता है।
-    - निर्माता ऐप के बिना Bitcoin-Safe के साथ काम करता है।
-    th:
-    - อุปกรณ์ลงนามเฉพาะ Bitcoin พร้อม USB และ microSD
-    - เก็บข้อมูลกระเป๋า multisig ไว้บนอุปกรณ์
-    - ทำงานกับ Bitcoin-Safe ได้โดยไม่ต้องใช้แอปของผู้ผลิต
-    ar:
-    - جهاز توقيع مخصص لبيتكوين فقط مع USB وmicroSD.
-    - يخزن تفاصيل محفظة التوقيع المتعدد على الجهاز.
-    - يعمل مع Bitcoin-Safe دون تطبيق من الشركة المصنعة.
-    fa:
-    - امضاکننده مخصوص بیت‌کوین با USB و microSD.
-    - جزئیات کیف پول چندامضایی را روی دستگاه ذخیره می‌کند.
-    - بدون اپ سازنده با Bitcoin-Safe کار می‌کند.
-    my:
-    - USB နှင့် microSD ပါသော Bitcoin သီးသန့် signer ဖြစ်သည်။
-    - multisig wallet အချက်အလက်များကို စက်ပေါ်တွင် သိမ်းဆည်းသည်။
-    - ထုတ်လုပ်သူ app မလိုဘဲ Bitcoin-Safe နှင့် အလုပ်လုပ်သည်။
-  summary:
-    en: Bitcoin-only signer with USB and microSD; stores multisig wallet details on-device
-      and works with Bitcoin-Safe without a vendor app.
-  image: https://raw.githubusercontent.com/thebitcoinhole/database/refs/heads/master/item-types/hardware-wallets/img/coldcard-mk4-thumb.webp
-  shop_url: https://store.coinkite.com/promo/8BFF877000C34A86F410
-  discount:
-    code: 8BFF877000C34A86F410
-    note:
-      en: Promo automatically applied at Coinkite.
-  features:
-    usb: true
-    sd: true
-  bitcoin_only: true
+  security_warning:
+    standard_firmware: 1.5.0Q
+    edge_firmware: 6.6.0QX
+    coinkite_url: https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/
+    block_url: https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware
 - id: coldcard-mk5
   slug: coldcard-mk5
   slugimage: coldcard
+  default_last: true
+  default_last_order: 1
   name:
     en: Coldcard Mk5
   summary_points:
@@ -297,6 +207,11 @@ signers:
     usb: true
     sd: true
   bitcoin_only: true
+  security_warning:
+    standard_firmware: 5.6.0
+    edge_firmware: 6.6.0X
+    coinkite_url: https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/
+    block_url: https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware
 - id: bitbox02
   slug: bitbox02
   slugimage: bitbox02

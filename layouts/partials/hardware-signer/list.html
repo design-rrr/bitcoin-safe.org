@@ -9,13 +9,16 @@
 {{ else }}
   {{ range $index, $signer := $signers }}
     {{ $name := or (index $signer.name $lang) (index $signer.name "en") }}
+    {{ $defaultLast := default false $signer.default_last }}
+    {{ $defaultLastOrder := default 0 $signer.default_last_order }}
+    {{ $originalIndex := cond $defaultLast (add (len $signers) $defaultLastOrder) $index }}
     {{ $entries = $entries | append (dict
       "signer" $signer
       "sort_name" (lower $name)
-      "original_index" $index
+      "original_index" $originalIndex
     ) }}
   {{ end }}
-  {{ $entries = sort $entries "sort_name" }}
+  {{ $entries = sort $entries "original_index" }}
   {{ $connectionOptions := slice
     (dict "key" "usb" "label" (i18n "hardware_filter_usb") "icon" "/images/usb.svg")
     (dict "key" "qr" "label" (i18n "hardware_filter_qr") "icon" "/images/qr-code.svg")
@@ -58,9 +61,9 @@
       <div class="hardware-signer-sort">
         <label class="hardware-signer-sort-label" for="{{ $sortID }}">{{ i18n "hardware_sort_label" }}</label>
         <select class="form-select hardware-signer-sort-select" id="{{ $sortID }}" data-hardware-signer-sort>
-          <option value="alpha-asc" selected>{{ i18n "hardware_sort_alpha_asc" }}</option>
+          <option value="alpha-asc">{{ i18n "hardware_sort_alpha_asc" }}</option>
           <option value="alpha-desc">{{ i18n "hardware_sort_alpha_desc" }}</option>
-          <option value="manual">{{ i18n "hardware_sort_manual" }}</option>
+          <option value="manual" selected>{{ i18n "hardware_sort_manual" }}</option>
         </select>
       </div>
     </div>
