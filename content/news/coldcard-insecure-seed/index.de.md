@@ -1,0 +1,20 @@
+---
+title: "Unsicherer COLDCARD-Seed"
+date: "2026-08-02"
+draft: false
+description: "Kurzanleitung zum Verschieben von Guthaben aus einem Seed, der auf einem Coinkite-Gerät erzeugt wurde."
+---
+
+[Coinkite hat eine Schwachstelle bei der Seed-Erzeugung in betroffener COLDCARD-Firmware offengelegt](https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/). Siehe auch [Blocks technische Analyse des vorhersagbaren RNG-Fallbacks und des 32-Bit-Reseedings](https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware). Ein Firmware-Update repariert einen bestehenden Seed nicht.
+
+**Wenn du einen Seed mit einem Coinkite-Produkt erstellt hast, migriere BALD!**
+
+## Checkliste für die Migration
+
+1. Erstelle auf einem **Signiergerät, das kein COLDCARD ist** ([unterstützte Geräte ansehen]({{< ref "library/supported-hardware-signers" >}})), mit dem Einrichtungsassistenten von Bitcoin-Safe eine vollständig neue Wallet: wähle entweder eine [Single-Signature-Wallet]({{< ref "library/setup-singlesig-wallet" >}}) oder eine [Multisignature-Wallet]({{< ref "library/setup-multisig-wallet" >}}). Verwende den alten Seed nicht wieder.
+   - Wenn kein Hardware-Signer außer COLDCARD verfügbar ist, kannst du [MetroVault]({{< ref "library/supported-hardware-signers/metrovault" >}}) auf einem dedizierten, auf Werkseinstellungen zurückgesetzten Android-Gerät verwenden, das offline bleibt und ausschließlich zum Signieren dient.
+   - Schließe den Empfangs- und Sendetest des Assistenten ab, um sicherzustellen, dass die neue Wallet korrekt eingerichtet ist: prüfe ihr Backup und eine Empfangsadresse auf dem neuen Signer, empfange einen kleinen Testbetrag und sende ihn erfolgreich an eine andere verifizierte Adresse derselben neuen Wallet.
+2. Signiere die Migrationstransaktion, aber **übertrage sie nicht auf dem üblichen Weg**. Kopiere die signierte Rohtransaktion und reiche sie direkt über [MARA Slipstream](https://slipstream.mara.com/) ein, damit die öffentlichen Schlüssel der alten Wallet möglichst kurz im öffentlichen Mempool offengelegt sind.
+3. Behalte das alte COLDCARD, bis das gesamte Guthaben in der neuen Wallet eingegangen und bestätigt ist, und aktualisiere es anschließend auf die neueste Firmware.
+
+Wenn du jemandem bei der Migration hilfst, bitte die Person niemals, ihre Seed-Wörter zu teilen, zu fotografieren oder einzutippen. Der Seed muss privat bleiben und darf nur auf dem Signiergerät eingegeben werden.
