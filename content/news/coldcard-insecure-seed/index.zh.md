@@ -11,7 +11,7 @@ description: "将资金从 Coinkite 设备生成的 seed 中迁出的简要指�
 
 ## 迁移检查清单
 
-1. 在**非 COLDCARD 签名设备**（[查看支持的设备]({{< ref "library/supported-hardware-signers" >}})）上，使用 Bitcoin-Safe 设置向导创建一个全新的钱包：选择[单签钱包]({{< ref "library/setup-singlesig-wallet" >}})或[多签钱包]({{< ref "library/setup-multisig-wallet" >}})。不要重复使用旧 seed。
+1. 在**非 COLDCARD 签名设备**（[查看支持的设备]({{< ref "library/supported-hardware-signers" >}})）上生成一个全新的 seed。不要重复使用旧 seed。然后在 Bitcoin-Safe 设置向导中使用该签名器，创建新的[单签钱包]({{< ref "library/setup-singlesig-wallet" >}})或[多签钱包]({{< ref "library/setup-multisig-wallet" >}})。
    - 如果没有非 COLDCARD 硬件签名器可用，可以在一台专用、已恢复出厂设置、始终保持离线且仅用于签名的 Android 设备上使用 [MetroVault]({{< ref "library/supported-hardware-signers/metrovault" >}})。
    - 完成向导中的收款和发送测试，以确保新钱包设置正确：核对备份以及新签名器上显示的收款地址，接收一小笔测试金额，然后成功 self-send 到新钱包中另一个已核对的地址。
 2. 签署迁移交易，但**不要按常规方式广播**。复制已签名的 raw transaction，并通过 [MARA Slipstream](https://slipstream.mara.com/) 直接提交，以缩短旧钱包公钥暴露在公共 mempool 中的时间。

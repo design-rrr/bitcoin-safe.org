@@ -11,7 +11,7 @@ description: "إرشادات مختصرة لنقل الأموال من seed تم
 
 ## قائمة التحقق من النقل
 
-1. على **جهاز توقيع غير COLDCARD** ([راجع الأجهزة المدعومة]({{< ref "library/supported-hardware-signers" >}}))، أنشئ wallet جديدة تمامًا باستخدام معالج إعداد Bitcoin-Safe: اختر [wallet بتوقيع واحد]({{< ref "library/setup-singlesig-wallet" >}}) أو [wallet متعددة التوقيعات]({{< ref "library/setup-multisig-wallet" >}}). لا تعِد استخدام seed القديمة.
+1. أنشئ seed جديدة تمامًا على **جهاز توقيع غير COLDCARD** ([راجع الأجهزة المدعومة]({{< ref "library/supported-hardware-signers" >}})). لا تعِد استخدام seed القديمة. بعد ذلك، استخدم جهاز التوقيع هذا مع معالج إعداد Bitcoin-Safe لإنشاء [wallet بتوقيع واحد]({{< ref "library/setup-singlesig-wallet" >}}) أو [wallet متعددة التوقيعات]({{< ref "library/setup-multisig-wallet" >}}) جديدة.
    - إذا لم يتوفر أي جهاز توقيع عتادي غير COLDCARD، فيمكن استخدام [MetroVault]({{< ref "library/supported-hardware-signers/metrovault" >}}) على جهاز Android مخصص تمت إعادته إلى إعدادات المصنع، ويظل غير متصل بالإنترنت ويُستخدم للتوقيع فقط.
    - أكمل اختبار الاستلام والإرسال في المعالج للتأكد من إعداد wallet الجديدة بصورة صحيحة: تحقق من النسخة الاحتياطية وعنوان استلام على جهاز التوقيع الجديد، واستلم مبلغًا تجريبيًا صغيرًا، ثم نفّذ بنجاح إرسالًا ذاتيًا إلى عنوان آخر تم التحقق منه في wallet الجديدة.
 2. وقّع معاملة النقل، لكن **لا تبثها بالطريقة المعتادة**. انسخ المعاملة الخام الموقعة وقدّمها مباشرة عبر [MARA Slipstream](https://slipstream.mara.com/) لتقليل مدة انكشاف المفاتيح العامة للـ wallet القديمة في mempool العامة.

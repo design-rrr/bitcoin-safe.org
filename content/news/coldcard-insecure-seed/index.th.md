@@ -11,7 +11,7 @@ description: "คำแนะนำสั้น ๆ สำหรับย้า�
 
 ## รายการตรวจสอบการย้าย
 
-1. บน **อุปกรณ์ลงนามที่ไม่ใช่ COLDCARD** ([ดูอุปกรณ์ที่รองรับ]({{< ref "library/supported-hardware-signers" >}})) ให้สร้าง wallet ใหม่ทั้งหมดด้วยตัวช่วยการตั้งค่า Bitcoin-Safe โดยเลือก [wallet แบบลายเซ็นเดียว]({{< ref "library/setup-singlesig-wallet" >}}) หรือ [wallet แบบหลายลายเซ็น]({{< ref "library/setup-multisig-wallet" >}}) ห้ามใช้ seed เก่าซ้ำ
+1. สร้าง seed ใหม่ทั้งหมดบน **อุปกรณ์ลงนามที่ไม่ใช่ COLDCARD** ([ดูอุปกรณ์ที่รองรับ]({{< ref "library/supported-hardware-signers" >}})) ห้ามใช้ seed เก่าซ้ำ จากนั้นใช้อุปกรณ์ลงนามนั้นกับตัวช่วยการตั้งค่า Bitcoin-Safe เพื่อสร้าง [wallet แบบลายเซ็นเดียว]({{< ref "library/setup-singlesig-wallet" >}}) หรือ [wallet แบบหลายลายเซ็น]({{< ref "library/setup-multisig-wallet" >}}) ใหม่
    - หากไม่มี hardware signer ที่ไม่ใช่ COLDCARD สามารถใช้ [MetroVault]({{< ref "library/supported-hardware-signers/metrovault" >}}) บนอุปกรณ์ Android เฉพาะที่รีเซ็ตเป็นค่าโรงงานแล้ว เก็บไว้แบบออฟไลน์ และใช้สำหรับลงนามเท่านั้น
    - ทำการทดสอบรับและส่งในตัวช่วยให้เสร็จเพื่อให้แน่ใจว่า wallet ใหม่ตั้งค่าอย่างถูกต้อง: ตรวจสอบข้อมูลสำรองและที่อยู่รับบน signer ใหม่ รับเงินทดสอบจำนวนเล็กน้อย แล้วทำ self-send ไปยังที่อยู่อื่นใน wallet ใหม่ที่ตรวจสอบแล้วให้สำเร็จ
 2. ลงนาม transaction สำหรับการย้าย แต่ **อย่า broadcast ตามปกติ** ให้คัดลอก raw transaction ที่ลงนามแล้วและส่งโดยตรงผ่าน [MARA Slipstream](https://slipstream.mara.com/) เพื่อลดเวลาที่ public keys ของ wallet เก่าถูกเปิดเผยใน public mempool
