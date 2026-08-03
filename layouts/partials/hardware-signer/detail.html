@@ -39,10 +39,32 @@
         <div class="mb-2">
           {{ partial "hardware-signer/features.html" (dict "features" $signer.features "center" false) }}
         </div>
-        {{ if $signer.shop_url }}
-          <a class="btn btn-primary btn-md px-4" href="{{ $signer.shop_url }}" target="_blank" rel="noopener">
-            {{ i18n "hardware_buy_official" }}
-          </a>
+        {{ if or $signer.shop_url $signer.download_url $signer.instructions_url $signer.source_url }}
+          <div class="d-flex gap-2 flex-wrap">
+            {{ if $signer.shop_url }}
+              <a class="btn btn-primary btn-md px-4" href="{{ $signer.shop_url }}" target="_blank" rel="noopener">
+                {{ i18n "hardware_buy_official" }}
+              </a>
+            {{ end }}
+            {{ with $signer.download_url }}
+              {{ $label := or (index $signer.download_label $lang) (index $signer.download_label "en") "Download" }}
+              <a class="btn btn-primary btn-md px-4" href="{{ . }}" target="_blank" rel="noopener">
+                {{ $label }}
+              </a>
+            {{ end }}
+            {{ with $signer.instructions_url }}
+              {{ $label := or (index $signer.instructions_label $lang) (index $signer.instructions_label "en") (i18n "hardware_instructions") "Instructions" }}
+              <a class="btn btn-outline-secondary btn-md px-4" href="{{ . }}" target="_blank" rel="noopener">
+                {{ $label }}
+              </a>
+            {{ end }}
+            {{ with $signer.source_url }}
+              {{ $label := or (index $signer.source_label $lang) (index $signer.source_label "en") "Source code" }}
+              <a class="btn btn-outline-secondary btn-md px-4" href="{{ . }}" target="_blank" rel="noopener">
+                {{ $label }}
+              </a>
+            {{ end }}
+          </div>
           {{ with $discount }}
             <p class="mt-2 mb-0 text-success fw-semibold">{{ i18n "hardware_discount" }} <strong>{{ .code }}</strong> {{ with .note }}<span class="text-muted small">— {{ or (index . $lang) (index . "en") }}</span>{{ end }}</p>
           {{ end }}
@@ -50,6 +72,23 @@
       </div>
     </div>
   </header>
+
+  {{ with $signer.security_warning }}
+    <div class="alert alert-danger mb-4" role="alert">
+      <h2 class="h4 alert-heading">⚠️ {{ i18n "hardware_security_warning_title" }}</h2>
+      <p class="mb-2"><strong>{{ i18n "hardware_security_warning_text" (dict
+        "Name" $name
+        "Standard" .standard_firmware
+        "Edge" .edge_firmware
+      ) }}</strong></p>
+      <p class="mb-2">{{ i18n "hardware_security_warning_dice" }}</p>
+      <p class="mb-0">
+        <a class="alert-link" href="{{ .coinkite_url }}" target="_blank" rel="noopener">{{ i18n "hardware_security_warning_coinkite" }}</a>
+        ·
+        <a class="alert-link" href="{{ .block_url }}" target="_blank" rel="noopener">{{ i18n "hardware_security_warning_block" }}</a>
+      </p>
+    </div>
+  {{ end }}
 
   {{/* Auto-discover screenshots for this signer */}}
   {{ with $ctx.Content }}

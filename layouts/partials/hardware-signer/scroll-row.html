@@ -4,8 +4,11 @@
 {{ if not $signers }}
   <p class="text-muted">No hardware signers defined.</p>
 {{ else }}
+  {{ $orderedSigners := where $signers "default_last" "ne" true }}
+  {{ $lastSigners := sort (where $signers "default_last" true) "default_last_order" }}
+  {{ $orderedSigners = $orderedSigners | append $lastSigners }}
   <div class="d-flex flex-row gap-3 overflow-auto pb-3 px-1">
-    {{ range $signers }}
+    {{ range $orderedSigners }}
       {{ partial "hardware-signer/card-horizontal.html" (dict "signer" . "context" $ctx) }}
     {{ end }}
   </div>

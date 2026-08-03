@@ -3,12 +3,12 @@ aliases:
   - "/features/readme/"
   - "/en/features/readme/"
 title: "All features"
-description: "Comprehensive overview of most features in Bitcoin Safe"
+description: "Comprehensive overview of most features in Bitcoin-Safe"
 draft: false
 bucket: features
 images: ["logo.png"]
 keywords: [
-  "Bitcoin Safe",
+  "Bitcoin-Safe",
   "bitcoin savings wallet",
   "MultiSig wallet",
   "Multisig setup wizard",
@@ -56,14 +56,14 @@ keywords: [
 weight: -10
 ---
 <!-- header-end -->
-# Bitcoin Safe
+# Bitcoin-Safe
 
 #### A bitcoin savings wallet for the entire family
 
 - **Easy Multisig-Wallet Setup**
   - [Step-by-Step instructions](https://bitcoin-safe.org/en/library/setup-multisig-wallet/) for a secure MultiSig setup with [PDF backup sheets](https://bitcoin-safe.org/en/library/pdf-export/)
   - [Test transactions](https://bitcoin-safe.org/en/library/setup-multisig-wallet/) ensure that all hardware signers are ready
-  - Full support for [Coldcard Q](https://bitcoin-safe.org/en/library/supported-hardware-signers/coldcard-q/), [Coldcard Mk4](https://bitcoin-safe.org/en/library/supported-hardware-signers/coldcard-mk4/), [BitBox02 / BitBox02 Nova](https://bitcoin-safe.org/en/library/supported-hardware-signers/bitbox02/), [Foundation Passport Core](https://bitcoin-safe.org/en/library/supported-hardware-signers/passport/), [Jade](https://bitcoin-safe.org/en/library/supported-hardware-signers/jade/), [Jade Plus](https://bitcoin-safe.org/en/library/supported-hardware-signers/jade-plus/), [Trezor Safe 3 & 5](https://bitcoin-safe.org/en/library/supported-hardware-signers/trezor/), [Keystone](https://bitcoin-safe.org/en/library/supported-hardware-signers/keystone/), [Ledger Nano S / S Plus / X / Flex](https://bitcoin-safe.org/en/library/supported-hardware-signers/ledger/), [Specter DIY / Shield / Shield Lite](https://bitcoin-safe.org/en/library/supported-hardware-signers/specter/), [SeedSigner](https://bitcoin-safe.org/en/library/supported-hardware-signers/seedsigner/), [Krux](https://bitcoin-safe.org/en/library/supported-hardware-signers/krux/), using  *QR*, *USB*, and *SD-card* 
+  - Full support for [Coldcard Q](https://bitcoin-safe.org/en/library/supported-hardware-signers/coldcard-q/), [BitBox02 / BitBox02 Nova](https://bitcoin-safe.org/en/library/supported-hardware-signers/bitbox02/), [Foundation Passport Core](https://bitcoin-safe.org/en/library/supported-hardware-signers/passport/), [Jade](https://bitcoin-safe.org/en/library/supported-hardware-signers/jade/), [Jade Plus](https://bitcoin-safe.org/en/library/supported-hardware-signers/jade-plus/), [Trezor Safe 3 & 5](https://bitcoin-safe.org/en/library/supported-hardware-signers/trezor/), [Keystone](https://bitcoin-safe.org/en/library/supported-hardware-signers/keystone/), [Ledger Nano S / S Plus / X / Flex](https://bitcoin-safe.org/en/library/supported-hardware-signers/ledger/), [Specter DIY / Shield / Shield Lite](https://bitcoin-safe.org/en/library/supported-hardware-signers/specter/), [SeedSigner](https://bitcoin-safe.org/en/library/supported-hardware-signers/seedsigner/), [Krux](https://bitcoin-safe.org/en/library/supported-hardware-signers/krux/), using  *QR*, *USB*, and *SD-card*
 - **Secure**: [Hardware signers only](https://bitcoin-safe.org/en/library/hardware-signer-only/)
   - [All wallets require hardware signers/wallets](https://bitcoin-safe.org/en/library/hardware-signer-only/) for safe seed storage 
   - Powered by **[BDK](https://github.com/bitcoindevkit/bdk)**
