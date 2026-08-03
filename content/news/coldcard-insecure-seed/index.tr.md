@@ -14,7 +14,9 @@ description: "Coinkite cihazında oluşturulan bir seed ile korunan fonları ta�
 1. **COLDCARD olmayan bir imzalama cihazında** ([desteklenen cihazlara bakın]({{< ref "library/supported-hardware-signers" >}})) tamamen yeni bir seed oluşturun. Eski seed'i yeniden kullanmayın. Ardından bu imzalayıcıyı Bitcoin-Safe kurulum sihirbazıyla kullanarak yeni bir [tek imzalı cüzdan]({{< ref "library/setup-singlesig-wallet" >}}) veya [çoklu imzalı cüzdan]({{< ref "library/setup-multisig-wallet" >}}) oluşturun.
    - COLDCARD dışında bir donanım imzalayıcı yoksa, fabrika ayarlarına sıfırlanmış, çevrimdışı tutulan ve yalnızca imzalama için kullanılan özel bir Android cihazında [MetroVault]({{< ref "library/supported-hardware-signers/metrovault" >}}) kullanılabilir.
    - Yeni cüzdanın doğru kurulduğundan emin olmak için sihirbazdaki alma ve gönderme testini tamamlayın: yedeği ve yeni imzalayıcıdaki bir alma adresini doğrulayın, küçük bir test tutarı alın ve bu tutarı yeni cüzdandaki doğrulanmış başka bir adrese başarıyla kendinize gönderin.
-2. Taşıma işlemini imzalayın, ancak **normal şekilde yayınlamayın**. İmzalı ham işlemi kopyalayıp doğrudan [MARA Slipstream](https://slipstream.mara.com/) üzerinden göndererek eski cüzdanın açık anahtarlarının herkese açık mempool'da kaldığı süreyi azaltın.
+2. Taşıma işlemini imzalayın:
+   - **Etkilenen cüzdan tek imzalıysa:** hızla onaylanması için yüksek bir ücretle normal şekilde yayınlayın.
+   - **Etkilenen cüzdan çoklu imzalıysa:** normal şekilde yayınlamayın; çünkü bu, açık anahtarlarını herkese açık mempool'da ortaya çıkarır. İmzalı ham işlemi kopyalayıp doğrudan [MARA Slipstream](https://slipstream.mara.com/) üzerinden gönderin.
 3. Bakiyenin tamamı yeni cüzdana ulaşıp onaylanana kadar eski COLDCARD'ı saklayın, ardından en son aygıt yazılımına güncelleyin.
 
 Birinin taşıma yapmasına yardım ediyorsanız seed kelimelerini paylaşmasını, fotoğraflamasını veya yazmasını asla istemeyin. Seed gizli kalmalı ve yalnızca imzalama cihazına girilmelidir.
