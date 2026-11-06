@@ -409,6 +409,19 @@ body.plugins {
     li { margin-bottom: 0.35rem; }
   }
 
+  /* Markdown section headings share the scale and rhythm of the template
+     section headings (hero, media, pricing, faq, cta). */
+  .plugin-body {
+    h2 {
+      font-size: calc(1.275rem + 0.3vw);
+      margin: 3rem 0 1rem;
+
+      @media (min-width: 1200px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
   .plugin-cta-band {
     background-image: linear-gradient(
       135deg,
